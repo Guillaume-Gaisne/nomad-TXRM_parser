@@ -86,19 +86,16 @@ class NewParser(MatchingParser):
 
         self.parse_metadata_file()
 
-        try:
-            with open(f'{self.maindir}/metadata.json') as md_file:
-                md = json.load(md_file)
-                self.sec_data.operator = md['Operator']
-                self.sec_data.sample_type = md['Sample type']
-                self.sec_data.sample_subtype = md['Sample Sub-Type']
-                self.sec_data.sample_name = md['Sample name']
-                self.sec_data.elements_thickness = md['Relevant elements and thickness']
-                self.sec_data.xray_source = md['X-ray source']
-                self.sec_data.resolution = md['Resolution']
-                self.sec_data.contrast = md['Contrast']
-                self.sec_data.project = md['Project']
-                self.sec_data.microscope_name = md['Microscope name']
-                self.sec_data.md_file_not_found = False
-        except FileNotFoundError:
-            self.sec_data.md_file_not_found = True
+        with open(f'{self.maindir}/metadata.json') as md_file:
+            md = json.load(md_file)
+            self.sec_data.operator = md['Operator']
+            self.sec_data.sample_type = md['Sample type']
+            self.sec_data.sample_subtype = md['Sample Sub-Type']
+            self.sec_data.sample_name = md['Sample name']
+            self.sec_data.elements_thickness = md['Relevant elements and thickness']
+            self.sec_data.xray_source = md['X-ray source']
+            self.sec_data.resolution = md['Resolution']
+            self.sec_data.contrast = md['Contrast']
+            self.sec_data.project = md['Project']
+            self.sec_data.microscope_name = md['Microscope name']
+            self.sec_data.md_file_not_found = False
