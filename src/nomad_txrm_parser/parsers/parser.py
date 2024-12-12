@@ -83,7 +83,6 @@ class NewParser(MatchingParser):
         self.sec_data.z_position = self.metadata['ZPosition']
         self.sec_data.xray_magnification = self.metadata['XrayMagnification']
         self.sec_data.zone_plate_name = self.metadata['ZonePlateName']
-        self.sec_data.md_file_not_found = True
 
         self.parse_metadata_file()
 
@@ -99,4 +98,3 @@ class NewParser(MatchingParser):
             self.sec_data.contrast = md['Contrast']
             self.sec_data.project = md['Project']
             self.sec_data.microscope_name = md['Microscope name']
-            self.sec_data.md_file_not_found = False
